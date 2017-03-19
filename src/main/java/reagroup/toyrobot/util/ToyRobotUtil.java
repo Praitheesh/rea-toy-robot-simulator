@@ -19,7 +19,7 @@ public class ToyRobotUtil {
      * @param s
      */
     public static void print(String message, String... s) {
-        System.out.println(MessageFormat.format(message, s));
+        System.out.println(MessageFormat.format(message, (Object[])s));
     }
 
     /**
