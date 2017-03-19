@@ -11,6 +11,8 @@ import reagroup.toyrobot.util.ToyRobotUtil;
 import java.util.Optional;
 
 /**
+ * Controller class for ROBOT
+ *
  * Created by Praitheesh on 16/3/17.
  */
 public class RobotController {

@@ -7,9 +7,11 @@ import reagroup.toyrobot.util.ToyRobotUtil;
 import java.util.Optional;
 
 /**
+ * Class to handle Report input
+ *
  * Created by Praitheesh on 16/3/17.
  */
-public class ReportCommand extends Command {
+public class ReportCommand implements Command {
     @Override
     public Optional<Position> execute(final Position position) {
         ToyRobotUtil.print(Consts.REPORT_OUTPUT,

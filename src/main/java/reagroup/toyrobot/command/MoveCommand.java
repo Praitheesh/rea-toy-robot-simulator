@@ -6,9 +6,11 @@ import reagroup.toyrobot.util.Facing;
 import java.util.Optional;
 
 /**
+ * Class to handle MOVE input
+ *
  * Created by Praitheesh on 16/3/17.
  */
-public class MoveCommand extends Command {
+public class MoveCommand implements Command {
     @Override
     public Optional<Position> execute(final Position position) {
         return Optional.of(new Position(getNextX(position), getNextY(position), position.getFacing()));

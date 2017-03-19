@@ -10,6 +10,8 @@ import reagroup.toyrobot.util.Consts;
 import reagroup.toyrobot.util.ToyRobotUtil;
 
 /**
+ * ToyRobotSimulator initiate the game environment and coordinates the commands
+ * <p>
  * Created by Praitheesh on 18/3/17.
  */
 public class ToyRobotSimulator {
@@ -18,16 +20,15 @@ public class ToyRobotSimulator {
     private boolean isRobotPlaced = false;
     private RobotController controller;
 
-    ToyRobotSimulator() {
-    }
 
-    ToyRobotSimulator(Table gameTable) {
+    public ToyRobotSimulator(Table gameTable) {
         this.gameTable = gameTable;
     }
 
 
     /**
      * Core method to handle inputs
+     *
      * @param input
      */
     public void executeInput(String input) {
@@ -35,11 +36,7 @@ public class ToyRobotSimulator {
 
             if (input.matches(Consts.PLACE_COMMAND_PATTERN)) {
                 //Place the robot on game table
-                isRobotPlaced = true;
-                gameTable.setRobot(new Robot());
-                commandFactory = new CommandFactory();
-                controller = new RobotController();
-                controller.operateRobot(gameTable, commandFactory.getCommand(input));
+                initGame(input);
             } else if (input.matches(Consts.VALID_NON_PLACE_COMMAND_PATTERN) && !isRobotPlaced) {
                 //Robot not placed into game table yet , place it first
                 ToyRobotUtil.print(Consts.PLACE_COMMAND_FIRST);
@@ -57,5 +54,13 @@ public class ToyRobotSimulator {
         } catch (PositionOutOfBoundException e) {
             ToyRobotUtil.print(e.getMessage());
         }
+    }
+
+    private void initGame(String input) throws UnsupportedCommandException, PositionOutOfBoundException {
+        isRobotPlaced = true;
+        gameTable.setRobot(new Robot());
+        commandFactory = new CommandFactory();
+        controller = new RobotController();
+        controller.operateRobot(gameTable, commandFactory.getCommand(input));
     }
 }

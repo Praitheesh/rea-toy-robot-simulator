@@ -6,12 +6,14 @@ import reagroup.toyrobot.util.TurnEnum;
 import java.util.Optional;
 
 /**
+ * Class to handle both RIGHT and LEFT turn input
+ *
  * Created by Praitheesh on 16/3/17.
  */
-public class TurnCommand extends Command {
+public class TurnCommand implements Command {
     private TurnEnum turn;
 
-    TurnCommand(TurnEnum turn) {
+    public TurnCommand(TurnEnum turn) {
         this.turn = turn;
     }
 

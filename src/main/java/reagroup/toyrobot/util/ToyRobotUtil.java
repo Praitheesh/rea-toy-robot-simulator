@@ -30,7 +30,7 @@ public class ToyRobotUtil {
      */
     public static boolean validateRobotPosition(Table table, Position newPosition) {
         if (table.getMaxX() >= newPosition.getX() && table.getMaxY() >= newPosition.getY()
-                && table.getMinX() >= newPosition.getX() && table.getMinY() >= newPosition.getY()) {
+                && table.getMinX() <= newPosition.getX() && table.getMinY() <= newPosition.getY()) {
             return true;
         } else {
             return false;

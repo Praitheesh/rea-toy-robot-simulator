@@ -10,13 +10,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
+ * Class to handle Place input
+ *
  * Created by Praitheesh on 16/3/17.
  */
-public class PlaceCommand extends Command {
+public class PlaceCommand implements Command {
 
     private String inputString;
 
-    PlaceCommand(String input) {
+    public PlaceCommand(String input) {
         this.inputString = input;
     }
 

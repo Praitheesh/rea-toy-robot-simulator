@@ -9,6 +9,8 @@ import java.io.InputStreamReader;
 import java.util.stream.Stream;
 
 /**
+ * Executable application class which reads the users input
+ *
  * Created by Praitheesh on 15/3/17.
  */
 public class ToyRobotApp {

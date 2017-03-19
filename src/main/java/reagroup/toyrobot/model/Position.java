@@ -3,6 +3,8 @@ package reagroup.toyrobot.model;
 import reagroup.toyrobot.util.Facing;
 
 /**
+ * Model class to represent the Robot position in the table
+ *
  * Created by Praitheesh on 16/3/17.
  */
 public class Position {

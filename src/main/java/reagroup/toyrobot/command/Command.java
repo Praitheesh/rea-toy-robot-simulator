@@ -8,6 +8,14 @@ import java.util.Optional;
 /**
  * Created by Praitheesh on 16/3/17.
  */
-public abstract class Command {
-    public abstract Optional<Position> execute(final Position position) throws UnsupportedCommandException;
+public interface Command {
+
+    /**
+     * Execute the command and return expected new @{@link Position}
+     *
+     * @param currentPosition
+     * @return
+     * @throws UnsupportedCommandException
+     */
+    Optional<Position> execute(final Position currentPosition) throws UnsupportedCommandException;
 }
