@@ -5,10 +5,6 @@ package reagroup.toyrobot.exception;
  */
 public class ToyRobotException extends Exception {
 
-    public ToyRobotException(){
-        super();
-    }
-
     public ToyRobotException(String message){
         super(message);
     }

@@ -5,10 +5,6 @@ package reagroup.toyrobot.exception;
  */
 public class PositionOutOfBoundException extends Exception {
 
-    public PositionOutOfBoundException(){
-        super();
-    }
-
     public PositionOutOfBoundException(String message){
         super(message);
     }

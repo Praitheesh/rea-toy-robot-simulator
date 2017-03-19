@@ -1,6 +1,7 @@
 package reagroup.toyrobot;
 
 import reagroup.toyrobot.controller.RobotController;
+import reagroup.toyrobot.exception.PositionOutOfBoundException;
 import reagroup.toyrobot.exception.UnsupportedCommandException;
 import reagroup.toyrobot.model.Robot;
 import reagroup.toyrobot.model.Table;
@@ -51,8 +52,10 @@ public class ToyRobotSimulator {
                 ToyRobotUtil.print(Consts.VALID_INPUT_MESSAGE);
             }
         } catch (UnsupportedCommandException e) {
-            ToyRobotUtil.print(Consts.INVALID_INPUT);
+            ToyRobotUtil.print(e.getMessage());
             ToyRobotUtil.print(Consts.VALID_INPUT_MESSAGE);
+        } catch (PositionOutOfBoundException e) {
+            ToyRobotUtil.print(e.getMessage());
         }
     }
 }

@@ -13,7 +13,7 @@ public class CommandFactory {
 
     public Command getCommand(String input) throws UnsupportedCommandException {
         if (input.startsWith(CommandEnum.PLACE.toString())) {
-            return new PlaceCommand();
+            return new PlaceCommand(input);
         } else if (input.equals(CommandEnum.LEFT)) {
             return new TurnCommand(TurnEnum.LEFT);
         } else if (input.equals(CommandEnum.RIGHT)) {
